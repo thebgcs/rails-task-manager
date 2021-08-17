@@ -1,0 +1,16 @@
+<div>
+  <h1>My Tasks</h1>
+  <br>
+  <% @tasks.each do |task| %>
+    <ul class="fa-ul">
+      <li>
+        <i class="fa-li fa fa-check-square"></i>
+        <i class="far fa-square"></i>
+        <%= link_to task.title, task_path(task) %> -
+        <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    </ul>
+  <% end %>
+  <br>
+  <%= link_to 'Add a new task', tasks_new_path %>
+</div>
